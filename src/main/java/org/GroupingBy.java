@@ -1,46 +1,11 @@
 package org;
 
 import java.util.*;
-import java.util.function.BiConsumer;
-import java.util.function.BiFunction;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
-public class Test2 {
+public class GroupingBy {
     public static void main(String[] args) {
-
-        List<Employee> list = new ArrayList<>();
-        list.add(new Employee(101, "Swapnil", "Pune", 35, 10000));
-        list.add(new Employee(102, "Rahul", "Mumbai", 20, 20000));
-        list.add(new Employee(103, "Samir", "Mumbai", 23, 40000));
-        list.add(new Employee(104, "Deepak", "Pune", 27, 10000));
-        list.add(new Employee(105, "Samiksha", "Pune", 30, 40000));
-
-        BiFunction<Employee, Integer, Employee> bf = (employee, value) -> {
-            employee.setSalary(employee.getSalary() + employee.getSalary()*value/100);
-            return employee;
-        };
-        BiConsumer<Employee, Integer> bc =
-                (employee, incrementPercentage) -> employee.setSalary(employee.getSalary() + employee.getSalary() * incrementPercentage / 100);
-
-        list.stream()
-                .filter(e -> e.getAge() > 25)
-                .forEach(e -> bc.accept(e, 10));
-        list.stream().filter(e -> e.getAge() > 25).forEach(System.out::println);
-        System.out.println("------------------------------1");
-
-        List<Employee> list2 = list.stream()
-                .filter(e -> e.getAge() > 25)
-                .map(e -> bf.apply(e, 10))
-                .collect(Collectors.toList());
-        list2.stream().forEach(System.out::println);
-        System.out.println("---------------------------------2");
-
-        //grouping by
-        List<String> names = list.stream().collect(Collectors.mapping((Employee::getName), Collectors.toList()));
-        String names2 = names.stream().collect(Collectors.joining(", "));
-        System.out.println(names2);
-        System.out.println("----------------------------3");
-
         Department dept1 = new Department(10, "Pune");
         Department dept2 = new Department(20, "Mumbai");
         List<Employee2> employees = new ArrayList<>();
@@ -76,5 +41,19 @@ public class Test2 {
             System.out.println(e.getKey() + " : " + e.getValue());
         });
 
+
+
+        List<String> list = new ArrayList<>();
+        list.add("Sun");list.add("Moon");list.add("Jupiter");list.add("Urenus");
+        list.add("Sun");list.add("Moon");list.add("Jupiter");
+        Map<String, Long> m = list.stream()
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+        System.out.println(m);
+        Set<String> duplicates3 = m
+                .entrySet().stream()
+                .filter(e -> e.getValue()>1)
+                .map(e -> e.getKey())
+                .collect(Collectors.toSet());
+        System.out.println(duplicates3);
     }
 }
