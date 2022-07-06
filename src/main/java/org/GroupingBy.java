@@ -9,11 +9,11 @@ public class GroupingBy {
         Department dept1 = new Department(10, "Pune");
         Department dept2 = new Department(20, "Mumbai");
         List<Employee2> employees = new ArrayList<>();
-        employees.add(new Employee2(101, "Swapnil", "Pune", 35, 10000, dept1));
+        employees.add(new Employee2(101, "Swapnil", "Pune", 30, 10000, dept1));
         employees.add(new Employee2(102, "Rahul", "Mumbai", 20, 20000, dept2));
         employees.add(new Employee2(103, "Samir", "Mumbai", 23, 40000, dept2));
         employees.add(new Employee2(104, "Deepak", "Pune", 27, 10000, dept1));
-        employees.add(new Employee2(105, "Samiksha", "Pune", 30, 40000, dept2));
+        employees.add(new Employee2(105, "Samiksha", "Pune", 35, 40000, dept2));
 
         Map<Department, Set<Employee2>> map = employees.stream().collect(Collectors.groupingBy(Employee2::getDept, Collectors.toSet()));
         map.entrySet().stream().forEach(e -> {

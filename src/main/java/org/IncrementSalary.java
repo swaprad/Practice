@@ -10,11 +10,11 @@ public class IncrementSalary {
 
     public static void main(String[] args) {
         List<Employee> list = new ArrayList<>();
-        list.add(new Employee(101, "Swapnil", "Pune", 35, 10000));
+        list.add(new Employee(101, "Swapnil", "Pune", 30, 10000));
         list.add(new Employee(102, "Rahul", "Mumbai", 20, 20000));
         list.add(new Employee(103, "Samir", "Mumbai", 23, 40000));
         list.add(new Employee(104, "Deepak", "Pune", 27, 10000));
-        list.add(new Employee(105, "Samiksha", "Pune", 30, 40000));
+        list.add(new Employee(105, "Samiksha", "Pune", 35, 40000));
 
         BiFunction<Employee, Integer, Employee> bf = (employee, value) -> {
             employee.setSalary(employee.getSalary() + employee.getSalary()*value/100);

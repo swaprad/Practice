@@ -23,7 +23,7 @@ public class FindDuplicatesInListOfString {
 				.collect(Collectors.toMap(Function.identity(), str -> Collections.frequency(list, str)));
 		System.out.println(map1);
 
-		//grouping by
+		//group`ing by
 		Map<String, Long> map2 = list.stream()
 				.filter(str -> Collections.frequency(list, str) > 1)
 				.collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));

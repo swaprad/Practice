@@ -1,19 +1,21 @@
 package org;
 
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 public class Serialization {
     public static void main(String[] args) throws IOException, ClassNotFoundException {
 
         SerializationEntity se = new SerializationEntity(101, "Rahul");
 
-        ObjectOutputStream out=new ObjectOutputStream(new FileOutputStream("output-renamed.txt"));
+        Path path = Paths.get("output-renamed.txt");
+        ObjectOutputStream out=new ObjectOutputStream(Files.newOutputStream(path));
         out.writeObject(se);
 
-
-        ObjectInputStream in=new ObjectInputStream(new FileInputStream("output-renamed.txt"));
+        ObjectInputStream in=new ObjectInputStream(Files.newInputStream(path));
         SerializationEntity se2 = (SerializationEntity) in.readObject();
         System.out.println(se2);
-
     }
 }

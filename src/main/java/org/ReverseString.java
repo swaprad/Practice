@@ -8,8 +8,6 @@ public class ReverseString {
         String str = "Swapnil Patil";
         reverseString(str);
         reverseWordsOrder(str);
-
-
     }
 
     private static void reverseWordsOrder(String str) {

@@ -10,7 +10,6 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 public class SerializationEntity implements Serializable {
-
     private Integer id;
     private String name;
 

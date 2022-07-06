@@ -15,7 +15,7 @@ public class SortingAndCovertingToMap {
         System.out.println("-----------------------------------------");
 
         List<Employee> list = new ArrayList<>();
-        list.add(new Employee(101, "Swapnil", "Pune", 35, 20000));
+        list.add(new Employee(101, "Swapnil", "Pune", 27, 20000));
         list.add(new Employee(102, "Rahul", "Mumbai", 32,10000));
         list.add(new Employee(103, "Ramesh", "Bengalore", 37, 90000));
         list.add(new Employee(104, "Felix", "Delhi", 30, 45000));
@@ -28,7 +28,7 @@ public class SortingAndCovertingToMap {
         System.out.println("-----------------------------------------");
 
         Map<Integer, Employee> map = new HashMap<>();
-        map.put(101, new Employee(101, "Swapnil", "Pune", 35, 20000));
+        map.put(101, new Employee(101, "Swapnil", "Pune", 27, 20000));
         map.put(102, new Employee(102, "Rahul", "Mumbai", 32, 90000));
         map.put(103, new Employee(103, "Ramesh", "Bengalore", 37, 50000));
         map.put(104, new Employee(104, "Felix", "Delhi", 30, 35000));
