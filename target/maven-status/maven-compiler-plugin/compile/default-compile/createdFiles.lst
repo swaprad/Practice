@@ -23,7 +23,6 @@ org/maps/Employee.class
 Tester.class
 Dog.class
 org/Extension.class
-org/SerializationEntity.class
 org/IncrementSalary.class
 org/LinkedList1.class
 org/threads/FactorialTask.class
@@ -42,7 +41,6 @@ org/Employee.class
 org/CountCharactersInString.class
 org/ReverseString.class
 org/PassTestCodingGame.class
-org/Serialization.class
 org/maps/ComputeIfPresent_1.class
 org/threads/Print_1_2_with_2_threads.class
 org/threads/ScheduledExecutorServiceExample.class
